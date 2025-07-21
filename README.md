@@ -20,3 +20,6 @@ Area Subscription: Get AI-generated alerts for your locality or topic.
 Mood Map: Sentiment analysis overlay of Bengaluru neighborhoods.
 
 Push Notifications: Via Firebase Messaging for real-time updates.
+
+
+![img.png](img.png)
