@@ -1,0 +1,61 @@
+{
+  "name": "nextsignal",
+  "version": "1.0.0",
+  "description": "Agentic City Intelligence Application - Live, synthesized, and intelligent view of the city",
+  "private": true,
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.0",
+    "@google-cloud/pubsub": "^4.1.1",
+    "@google-cloud/storage": "^7.7.0",
+    "@google/generative-ai": "^0.2.1",
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
+    "firebase": "^10.14.1",
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^4.6.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.9.0",
+    "uuid": "^9.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy",
+    "functions:serve": "firebase emulators:start --only functions",
+    "functions:deploy": "firebase deploy --only functions"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.54.10",
+    "@types/lodash": "^4.14.202",
+    "@types/uuid": "^9.0.7"
+  }
+}

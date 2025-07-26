@@ -1,0 +1,37 @@
+{
+  "name": "nextsignal-functions",
+  "description": "NextSignal Firebase Cloud Functions for AI processing and data synthesis",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^4.6.0",
+    "@google/generative-ai": "^0.2.1",
+    "@google-cloud/storage": "^7.7.0",
+    "@google-cloud/pubsub": "^4.1.1",
+    "@google-cloud/language": "^6.0.0",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "uuid": "^9.0.1",
+    "lodash": "^4.17.21",
+    "sharp": "^0.33.0",
+    "ffmpeg-static": "^5.2.0",
+    "geofire-common": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+} 

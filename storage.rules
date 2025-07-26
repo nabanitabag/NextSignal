@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // User uploaded media for reports
+    match /reports/{reportId}/{allPaths=**} {
+      allow read: if true; // Public read for report media
+      allow write: if request.auth != null
+        && resource == null // Only allow creation, not updates
+        && request.resource.size < 50 * 1024 * 1024 // 50MB limit
+        && request.resource.contentType.matches('image/.*|video/.*'); // Only images and videos
+    }
+    
+    // Processed/analyzed media
+    match /processed/{allPaths=**} {
+      allow read: if true;
+      allow write: if false; // Only Cloud Functions can write
+    }
+    
+    // User profile images
+    match /users/{userId}/profile/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null 
+        && request.auth.uid == userId
+        && request.resource.size < 5 * 1024 * 1024 // 5MB limit
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+} 
